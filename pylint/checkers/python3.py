@@ -699,7 +699,7 @@ class Python3Checker(checkers.BaseChecker):
 
     def _warn_if_deprecated(self, node, module, attributes, report_on_modules=True):
         for message, module_map in self._bad_python3_module_map.items():
-            if module in module_map and module not in self._modules_warned_about:
+            if module in module_map:
                 if isinstance(module_map, frozenset):
                     if report_on_modules:
                         self._modules_warned_about.add(module)
